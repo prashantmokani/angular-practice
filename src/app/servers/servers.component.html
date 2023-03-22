@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="d-flex">
+    <div class="flex-row">
+      <label class="col-form-label p-2">Server Name: <span>{{serverName}}</span></label>
+      <input class="form-control p-2" [(ngModel)]="serverName">
+    </div>
+  </div>
+  <button class="btn btn-info p-2 m-2" (click)="createServer()">Add Server</button>
+  <button class="btn btn-danger p-2 m-2" (click)="removeServer()">Remove Server</button>
+
+  <br>
+  <p *ngIf="isServerCreated">Server is created with name: {{serverName}}</p>
+  <br>
+</div>
+
+<div class="container d-flex flex-column">
+  <app-server *ngFor="let server of servers"></app-server>
+</div>

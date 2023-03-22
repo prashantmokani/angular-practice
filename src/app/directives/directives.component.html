@@ -1,0 +1,14 @@
+<div class="container">
+  <input class="form-control" type="text" [(ngModel)]="detailsToAdd">
+  <div class="p-2">
+    <button class="btn btn-warning" (click)="addDetails()">Add Details</button>
+  </div>
+
+  <p class="m-1"
+     *ngFor="let details of log; let i = index"
+     [ngStyle]="{backgroundColor: i >= 4 ? 'blue': 'white'}"
+     [ngClass]="{colorWhite: i >= 4}"
+  > {{details}}
+  </p>
+
+</div>
